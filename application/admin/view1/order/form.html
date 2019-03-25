@@ -1,0 +1,13 @@
+<form class="mb-20" method="get" action="{Url('/admin/order/index','',''))}">
+    <input type="text" class="input-text" style="width:250px" placeholder="用户名称" name="user_id" value="{$Request.param.user_id}" >
+    <input type="text" class="input-text" style="width:250px" placeholder="订单编号" name="order_no" value="{$Request.param.order_no}" >
+    <div class="select-box" style="width:250px">
+        <select name="order_status" class="select">
+            <option value="">订单状态</option>
+            {foreach $orderStatus as $vo}
+            <option value="{$vo.id}">{$vo.name}</option>
+            {/foreach}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+</form>
